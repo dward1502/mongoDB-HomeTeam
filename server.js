@@ -13,7 +13,9 @@ app.use(bodyParser.json());
 // mongoose.Promise = global.Promise;
 mongoose.connect('mongodb+srv://admin:Pointers619!@cluster0-ouidt.mongodb.net/test?retryWrites=true&w=majority',{ useNewUrlParser: true, useUnifiedTopology: true, dbName: "HomeTeamDB" }).then(() => console.log('connection successfull')).catch((err) => console.log(err));
 
-
+app.use('/', (req,res) => {
+  res.send('Hello')
+})
 
 app.use('/api', properties);
 
