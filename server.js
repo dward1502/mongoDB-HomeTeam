@@ -10,8 +10,10 @@ app.use(bodyParser.urlencoded({extended: true}));
 app.use(bodyParser.json());
 
 
-mongoose.Promise = global.Promise;
-mongoose.connect('mongodb://localhost/HomeTeamDB',{ useNewUrlParser: true, useUnifiedTopology: true }).then(() => console.log('connection successfull')).catch((err) => console.log(err));
+// mongoose.Promise = global.Promise;
+mongoose.connect('mongodb+srv://admin:Pointers619!@cluster0-ouidt.mongodb.net/test?retryWrites=true&w=majority',{ useNewUrlParser: true, useUnifiedTopology: true, dbName: "HomeTeamDB" }).then(() => console.log('connection successfull')).catch((err) => console.log(err));
+
+
 
 app.use('/api', properties);
 
